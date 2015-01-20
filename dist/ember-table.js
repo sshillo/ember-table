@@ -1,8 +1,3 @@
-/*!
-* ember-table v0.4.0
-* Copyright 2012-2015 Addepar Inc.
-* See LICENSE.
-*/
 (function() {
 
 var _ref;
@@ -554,10 +549,7 @@ Ember.MouseWheelHandlerMixin = Ember.Mixin.create({
     });
   },
   willDestroyElement: function() {
-    var _ref;
-    if ((_ref = this.$()) != null) {
-      _ref.unbind('mousewheel');
-    }
+    this.$().unbind('mousewheel');
     return this._super();
   }
 });
@@ -1032,6 +1024,10 @@ Ember.Table.BodyTableContainer = Ember.Table.TableContainer.extend(Ember.MouseWh
   scrollTop: Ember.computed.alias('controller._tableScrollTop'),
   scrollLeft: Ember.computed.alias('controller._tableScrollLeft'),
   scrollElementSelector: '.antiscroll-inner',
+  willDestroyElement: function() {
+    this.$('.antiscroll-wrap').antiscroll('destroy');
+    return this._super();
+  },
   onScroll: function(event) {
     this.set('scrollTop', event.target.scrollTop);
     return event.preventDefault();

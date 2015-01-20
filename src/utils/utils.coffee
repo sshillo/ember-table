@@ -27,7 +27,7 @@ Ember.MouseWheelHandlerMixin = Ember.Mixin.create
     @$().bind 'mousewheel', (event, delta, deltaX, deltaY) =>
       Ember.run this, @onMouseWheel, event, delta, deltaX, deltaY
   willDestroyElement: ->
-    @$()?.unbind 'mousewheel'
+    @$().unbind 'mousewheel'
     @_super()
 
 Ember.ScrollHandlerMixin = Ember.Mixin.create

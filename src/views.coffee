@@ -337,6 +337,10 @@ Ember.Table.ShowHorizontalScrollMixin,
   scrollLeft:     Ember.computed.alias 'controller._tableScrollLeft'
   scrollElementSelector: '.antiscroll-inner'
 
+  willDestroyElement: ->
+    @$('.antiscroll-wrap').antiscroll('destroy')
+    @_super()
+
   # `event` here is a jQuery event
   onScroll: (event) ->
     @set 'scrollTop', event.target.scrollTop
