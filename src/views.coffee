@@ -409,7 +409,12 @@ Ember.ScrollHandlerMixin,
   # didInsertElement
   didInsertElement: ->
     @_super()
+    console.log @constructor, 'didInsertElement', @elementId
     @onScrollLeftDidChange()
+
+  willDestroyElement: ->
+    console.log @constructor, 'willDestroyElement', @elementId
+    @_super()
 
   # `event` here is a jQuery event
   onScroll: (event) ->

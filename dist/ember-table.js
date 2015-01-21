@@ -1,3 +1,8 @@
+/*!
+* ember-table v0.4.0
+* Copyright 2012-2015 Addepar Inc.
+* See LICENSE.
+*/
 (function() {
 
 var _ref;
@@ -1096,7 +1101,12 @@ Ember.Table.ScrollContainer = Ember.View.extend(Ember.AddeparMixins.StyleBinding
   scrollLeft: Ember.computed.alias('controller._tableScrollLeft'),
   didInsertElement: function() {
     this._super();
+    console.log(this.constructor, 'didInsertElement', this.elementId);
     return this.onScrollLeftDidChange();
+  },
+  willDestroyElement: function() {
+    console.log(this.constructor, 'willDestroyElement', this.elementId);
+    return this._super();
   },
   onScroll: function(event) {
     this.set('scrollLeft', event.target.scrollLeft);
