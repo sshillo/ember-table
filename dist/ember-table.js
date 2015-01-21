@@ -1106,6 +1106,7 @@ Ember.Table.ScrollContainer = Ember.View.extend(Ember.AddeparMixins.StyleBinding
   },
   willDestroyElement: function() {
     console.log(this.constructor, 'willDestroyElement', this.elementId);
+    this.$('.antiscroll-wrap').antiscroll('destroy');
     return this._super();
   },
   onScroll: function(event) {

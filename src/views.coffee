@@ -414,6 +414,7 @@ Ember.ScrollHandlerMixin,
 
   willDestroyElement: ->
     console.log @constructor, 'willDestroyElement', @elementId
+    @$('.antiscroll-wrap').antiscroll('destroy')
     @_super()
 
   # `event` here is a jQuery event
