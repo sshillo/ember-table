@@ -182,6 +182,9 @@ Ember.AddeparMixins.ResizeHandlerMixin,
     @elementSizeDidChange()
     @doForceFillColumns()
 
+  willDestroyElement: ->
+    @_super()
+
   onResizeEnd: ->
     # we need to put this on the run loop, because resize event came from
     # window. Otherwise, we get this warning when used in tests. You have

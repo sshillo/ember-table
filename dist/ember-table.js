@@ -1273,6 +1273,9 @@ Ember.Table.EmberTableComponent = Ember.Component.extend(Ember.AddeparMixins.Sty
     this.elementSizeDidChange();
     return this.doForceFillColumns();
   },
+  willDestroyElement: function() {
+    return this._super();
+  },
   onResizeEnd: function() {
     if (this.tableWidthNowTooSmall()) {
       this.set('columnsFillTable', true);
