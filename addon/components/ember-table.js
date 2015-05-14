@@ -228,6 +228,7 @@ StyleBindingsMixin, ResizeHandlerMixin, {
       antiscroll = $(antiscrollElement).data('antiscroll');
       if (antiscroll) {
         antiscroll.destroy();
+        $(antiscrollElement).removeData('antiscroll');
       }
     });
     this._super();

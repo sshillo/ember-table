@@ -349,6 +349,7 @@ var define, requireModule, require, requirejs;
           antiscroll = $(antiscrollElement).data('antiscroll');
           if (antiscroll) {
             antiscroll.destroy();
+            $(antiscrollElement).removeData('antiscroll');
           }
         });
         this._super();
