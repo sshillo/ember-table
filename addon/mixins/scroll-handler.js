@@ -17,5 +17,6 @@ export default Ember.Mixin.create({
     if ($scrollElementSelector) {
       $scrollElementSelector.unbind('scroll');
     }
+    this._super();
   }
 });

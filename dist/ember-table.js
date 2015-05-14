@@ -343,10 +343,14 @@ var define, requireModule, require, requirejs;
       },
 
       willDestroyElement: function() {
-        var antiscroll = this.$('.antiscroll-wrap').data('antiscroll');
-        if (antiscroll) {
-          antiscroll.destroy();
-        }
+        var antiscrollElements = this.$('.antiscroll-wrap');
+        var antiscroll;
+        antiscrollElements.each(function(i, antiscrollElement) {
+          antiscroll = $(antiscrollElement).data('antiscroll');
+          if (antiscroll) {
+            antiscroll.destroy();
+          }
+        });
         this._super();
       },
 
@@ -940,6 +944,7 @@ var define, requireModule, require, requirejs;
         if ($scrollElementSelector) {
           $scrollElementSelector.unbind('scroll');
         }
+        this._super();
       }
     });
   });
