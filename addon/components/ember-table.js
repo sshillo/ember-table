@@ -221,6 +221,14 @@ StyleBindingsMixin, ResizeHandlerMixin, {
     this.doForceFillColumns();
   },
 
+  willDestroyElement: function() {
+    var antiscroll = this.$('.antiscroll-wrap').data('antiscroll');
+    if (antiscroll) {
+      antiscroll.destroy();
+    }
+    this._super();
+  },
+
   onResizeEnd: function() {
     // We need to put this on the run loop, because resize event came from
     // window. Otherwise, we get this warning when used in tests. You have
