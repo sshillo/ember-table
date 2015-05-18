@@ -2,7 +2,7 @@ require 'build/src/templates'
 
 ## Used for bundling files together using neuter
 Ember.Table = Ember.Namespace.create()
-Ember.Table.VERSION = '0.4.1'
+Ember.Table.VERSION = '0.4.2'
 
 Ember.libraries?.register 'Ember Table', Ember.Table.VERSION
 

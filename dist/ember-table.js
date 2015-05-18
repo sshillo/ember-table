@@ -1,5 +1,5 @@
 /*!
-* ember-table v0.4.1
+* ember-table v0.4.2
 * Copyright 2012-2015 Addepar Inc.
 * See LICENSE.
 */
@@ -50,7 +50,7 @@ Ember.TEMPLATES["body-container"] = Ember.HTMLBars.template((function() {
           fragment = this.build(dom);
         }
         var morph0 = dom.createMorphAt(fragment,1,1,contextualElement);
-        inline(env, morph0, context, "view", [get(env, context, "Ember.Table.LazyTableBlock")], {"classNames": "ember-table-left-table-block", "contentBinding": "controller.bodyContent", "columnsBinding": "controller.fixedColumns", "widthBinding": "controller._fixedBlockWidth", "numItemsShowingBinding": "controller._numItemsShowing", "scrollTopBinding": "controller._scrollTop", "startIndexBinding": "controller._startIndex"});
+        inline(env, morph0, context, "view", [get(env, context, "Ember.Table.LazyTableBlock")], {"classNames": "ember-table-left-table-block", "content": "controller.bodyContent", "columns": "controller.fixedColumns", "width": "controller._fixedBlockWidth", "numItemsShowing": "controller._numItemsShowing", "scrollTop": "controller._scrollTop", "startIndex": "controller._startIndex"});
         return fragment;
       }
     };
@@ -90,6 +90,8 @@ Ember.TEMPLATES["body-container"] = Ember.HTMLBars.template((function() {
       var el2 = dom.createTextNode("\n");
       dom.appendChild(el1, el2);
       dom.appendChild(el0, el1);
+      var el1 = dom.createTextNode("\n");
+      dom.appendChild(el0, el1);
       return el0;
     },
     render: function render(context, env, contextualElement) {
@@ -116,7 +118,7 @@ Ember.TEMPLATES["body-container"] = Ember.HTMLBars.template((function() {
       var morph0 = dom.createMorphAt(element0,1,1);
       var morph1 = dom.createMorphAt(element0,3,3);
       block(env, morph0, context, "if", [get(env, context, "controller.numFixedColumns")], {}, child0, null);
-      inline(env, morph1, context, "view", [get(env, context, "Ember.Table.LazyTableBlock")], {"classNames": "ember-table-right-table-block", "contentBinding": "controller.bodyContent", "columnsBinding": "controller.tableColumns", "scrollLeftBinding": "controller._tableScrollLeft", "widthBinding": "controller._tableBlockWidth", "numItemsShowingBinding": "controller._numItemsShowing", "scrollTopBinding": "controller._scrollTop", "startIndexBinding": "controller._startIndex"});
+      inline(env, morph1, context, "view", [get(env, context, "Ember.Table.LazyTableBlock")], {"classNames": "ember-table-right-table-block", "content": "controller.bodyContent", "columns": "controller.tableColumns", "scrollLeft": "controller._tableScrollLeft", "width": "controller._tableBlockWidth", "numItemsShowing": "controller._numItemsShowing", "scrollTop": "controller._scrollTop", "startIndex": "controller._startIndex"});
       return fragment;
     }
   };
@@ -310,7 +312,7 @@ Ember.TEMPLATES["footer-container"] = Ember.HTMLBars.template((function() {
           fragment = this.build(dom);
         }
         var morph0 = dom.createMorphAt(fragment,1,1,contextualElement);
-        inline(env, morph0, context, "view", [get(env, context, "Ember.Table.TableBlock")], {"classNames": "ember-table-left-table-block", "contentBinding": "controller.footerContent", "columnsBinding": "controller.fixedColumns", "widthBinding": "controller._fixedBlockWidth", "heightBinding": "controller.footerHeight"});
+        inline(env, morph0, context, "view", [get(env, context, "Ember.Table.TableBlock")], {"classNames": "ember-table-left-table-block", "content": "controller.footerContent", "columns": "controller.fixedColumns", "width": "controller._fixedBlockWidth", "height": "controller.footerHeight"});
         return fragment;
       }
     };
@@ -364,7 +366,7 @@ Ember.TEMPLATES["footer-container"] = Ember.HTMLBars.template((function() {
       var morph0 = dom.createMorphAt(element0,1,1);
       var morph1 = dom.createMorphAt(element0,3,3);
       block(env, morph0, context, "if", [get(env, context, "controller.numFixedColumns")], {}, child0, null);
-      inline(env, morph1, context, "view", [get(env, context, "Ember.Table.TableBlock")], {"classNames": "ember-table-right-table-block", "contentBinding": "controller.footerContent", "columnsBinding": "controller.tableColumns", "scrollLeftBinding": "controller._tableScrollLeft", "widthBinding": "controller._tableBlockWidth", "heightBinding": "controller.footerHeight"});
+      inline(env, morph1, context, "view", [get(env, context, "Ember.Table.TableBlock")], {"classNames": "ember-table-right-table-block", "content": "controller.footerContent", "columns": "controller.tableColumns", "scrollLeft": "controller._tableScrollLeft", "width": "controller._tableBlockWidth", "height": "controller.footerHeight"});
       return fragment;
     }
   };
@@ -394,6 +396,8 @@ Ember.TEMPLATES["header-cell"] = Ember.HTMLBars.template((function() {
       dom.appendChild(el1, el2);
       var el2 = dom.createTextNode("\n");
       dom.appendChild(el1, el2);
+      dom.appendChild(el0, el1);
+      var el1 = dom.createTextNode("\n");
       dom.appendChild(el0, el1);
       return el0;
     },
@@ -465,7 +469,7 @@ Ember.TEMPLATES["header-container"] = Ember.HTMLBars.template((function() {
           fragment = this.build(dom);
         }
         var morph0 = dom.createMorphAt(fragment,1,1,contextualElement);
-        inline(env, morph0, context, "view", [get(env, context, "Ember.Table.HeaderBlock")], {"classNames": "ember-table-left-table-block", "columnsBinding": "controller.fixedColumns", "widthBinding": "controller._fixedBlockWidth", "heightBinding": "controller.headerHeight"});
+        inline(env, morph0, context, "view", [get(env, context, "Ember.Table.HeaderBlock")], {"classNames": "ember-table-left-table-block", "columns": "controller.fixedColumns", "width": "controller._fixedBlockWidth", "height": "controller.headerHeight"});
         return fragment;
       }
     };
@@ -519,7 +523,7 @@ Ember.TEMPLATES["header-container"] = Ember.HTMLBars.template((function() {
       var morph0 = dom.createMorphAt(element0,1,1);
       var morph1 = dom.createMorphAt(element0,3,3);
       block(env, morph0, context, "if", [get(env, context, "controller.numFixedColumns")], {}, child0, null);
-      inline(env, morph1, context, "view", [get(env, context, "Ember.Table.HeaderBlock")], {"classNames": "ember-table-right-table-block", "columnsBinding": "controller.tableColumns", "scrollLeftBinding": "controller._tableScrollLeft", "widthBinding": "controller._tableBlockWidth", "heightBinding": "controller.headerHeight"});
+      inline(env, morph1, context, "view", [get(env, context, "Ember.Table.HeaderBlock")], {"classNames": "ember-table-right-table-block", "columns": "controller.tableColumns", "scrollLeft": "controller._tableScrollLeft", "width": "controller._tableBlockWidth", "height": "controller.headerHeight"});
       return fragment;
     }
   };
@@ -562,7 +566,7 @@ Ember.TEMPLATES["header-row"] = Ember.HTMLBars.template((function() {
       }
       var morph0 = dom.createMorphAt(fragment,0,0,contextualElement);
       dom.insertBoundary(fragment, 0);
-      inline(env, morph0, context, "view", [get(env, context, "Ember.MultiItemViewCollectionView")], {"contentBinding": "view.content", "itemViewClassField": "headerCellViewClass", "widthBinding": "controller._tableColumnsWidth"});
+      inline(env, morph0, context, "view", [get(env, context, "Ember.MultiItemViewCollectionView")], {"content": "view.content", "itemViewClassField": "headerCellViewClass", "width": "controller._tableColumnsWidth"});
       return fragment;
     }
   };
@@ -642,6 +646,8 @@ Ember.TEMPLATES["table-cell"] = Ember.HTMLBars.template((function() {
       var el2 = dom.createTextNode("\n");
       dom.appendChild(el1, el2);
       dom.appendChild(el0, el1);
+      var el1 = dom.createTextNode("\n");
+      dom.appendChild(el0, el1);
       return el0;
     },
     render: function render(context, env, contextualElement) {
@@ -708,7 +714,7 @@ Ember.TEMPLATES["table-row"] = Ember.HTMLBars.template((function() {
       }
       var morph0 = dom.createMorphAt(fragment,0,0,contextualElement);
       dom.insertBoundary(fragment, 0);
-      inline(env, morph0, context, "view", [get(env, context, "Ember.MultiItemViewCollectionView")], {"rowBinding": "view.row", "contentBinding": "view.columns", "itemViewClassField": "tableCellViewClass", "widthBinding": "controller._tableColumnsWidth"});
+      inline(env, morph0, context, "view", [get(env, context, "Ember.MultiItemViewCollectionView")], {"row": "view.row", "content": "view.columns", "itemViewClassField": "tableCellViewClass", "width": "controller._tableColumnsWidth"});
       return fragment;
     }
   };
@@ -719,7 +725,7 @@ Ember.TEMPLATES["table-row"] = Ember.HTMLBars.template((function() {
 
 Ember.Table = Ember.Namespace.create();
 
-Ember.Table.VERSION = '0.4.1';
+Ember.Table.VERSION = '0.4.2';
 
 if ((_ref = Ember.libraries) != null) {
   _ref.register('Ember Table', Ember.Table.VERSION);
