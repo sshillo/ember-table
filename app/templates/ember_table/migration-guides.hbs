@@ -131,12 +131,12 @@ App.MyTableView = EmberTable.TableContainerView.extend (...)</pre>
           sure it looks like the structure of the new Ember Table examples. You
           can see one {{#link-to 'emberTable.simple'}}here{{/link-to}}. In
           particular, you might get errors if you don’t properly bind your
-          columns and content of the table, using <code>columnsBinding=</code>
-          and <code>contentBinding=</code>.
+          columns and content of the table, using <code>columns=</code>
+          and <code>content=</code>.
           <br/><br/>
           Both of these settings refer to variables in the corresponding
           controller (which here should be <code>MyTableController</code>), such that if you
-          set <code>columnsBinding=exampleVariable</code>, then the columns will be bound
+          set <code>columns=exampleVariable</code>, then the columns will be bound
           to <code>exampleVariable</code> in the controller. This gives you control over
           the look and content of the table.
           <br/><br/>
@@ -159,7 +159,7 @@ App.MyTableView = EmberTable.TableContainerView.extend (...)</pre>
           <code>RowArrayProxy</code>,
           take another look and consider whether you really need it. During my
           migration I was able to remove it by changing the
-          <code>contentBinding=</code>
+          <code>content=</code>
           in my handlebars file to a more appropriate variable for content.
         </li>
         <li>
